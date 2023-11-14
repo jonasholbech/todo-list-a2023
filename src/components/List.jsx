@@ -31,7 +31,7 @@ function List({ items, deleteItem, toggleCompleted }) {
     <div>
       <h2>Min todo liste</h2>
 
-      <Tabs activeKey="def" items={tabItems} />
+      <Tabs items={tabItems} />
     </div>
   );
 }
