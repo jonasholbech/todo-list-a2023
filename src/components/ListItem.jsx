@@ -1,4 +1,7 @@
+import { Button, Tabs } from "antd";
+
 import styles from "./ListItem.module.css";
+
 function ListItem({ completed, id, task, deleteItem, toggleCompleted }) {
   function deleteThis() {
     deleteItem(id);
@@ -6,10 +9,12 @@ function ListItem({ completed, id, task, deleteItem, toggleCompleted }) {
   return (
     <li className={completed ? styles.completed : ""}>
       {task}
-      <button onClick={() => toggleCompleted(id)}>
+      <Button type="primary" onClick={() => toggleCompleted(id)}>
         {completed ? "Undo" : "FÆRDIG!"}
-      </button>
-      <button onClick={deleteThis}>Slet</button>
+      </Button>
+      <Button type="primary" danger onClick={deleteThis}>
+        Slet
+      </Button>
     </li>
   );
 }
